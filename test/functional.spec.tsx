@@ -15,11 +15,9 @@ describe("submitting the form", () => {
     const { getByText, getByLabelText } = render(<App genderApi={apiMock} />);
 
     userEvent.type(getByLabelText(/name/), "pepe");
-    userEvent.click(getByText(/submit/));
-
-    expect(apiMock.getGender).toHaveBeenCalledWith("pepe");
 
     await wait(() => {
+      expect(apiMock.getGender).toHaveBeenCalledWith("pepe");
       expect(getByText(/pepe is a male name/)).toBeInTheDocument();
     });
   });

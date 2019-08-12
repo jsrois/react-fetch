@@ -8,7 +8,10 @@
   "scripts": {
     "start": "webpack-dev-server --mode development --config webpack.config.js --content-base dist/",
     "build": "webpack --config webpack.config.js",
-    "test": "jest"
+    "unit-tests": "jest",
+    "test": "yarn format && yarn lint && yarn run unit-tests",
+    "format": "prettier --config prettier.config.json --write \"./src/**/*.{js,jsx,ts,tsx}\"",
+    "lint": "tslint \"src/**/*.{ts,tsx}\""
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.0.0",
@@ -32,6 +35,11 @@
     "webpack-dev-server": "^3.7.2"
   },
   "devDependencies": {
-    "@testing-library/user-event": "^4.2.4"
+    "@testing-library/user-event": "^4.2.4",
+    "prettier": "^1.18.2",
+    "tslint": "^5.18.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-eslint-rules": "^5.4.0",
+    "tslint-react": "^4.0.0"
   }
 }

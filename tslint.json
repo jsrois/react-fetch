@@ -1,0 +1,27 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-eslint-rules",
+    "tslint-react",
+    "tslint-config-prettier"
+  ],
+  "linterOptions": {
+    "exclude": ["node_modules/**", "coverage/**", "config/browsersync.conf.js"]
+  },
+  "rules": {
+    "object-literal-sort-keys": false,
+    "no-empty-interface": false,
+    "no-object-literal-type-assertion": false,
+    "ordered-imports": false,
+    "no-submodule-imports": false,
+    "no-duplicate-imports": false,
+    "no-console": false,
+    "jsx-no-lambda": false,
+    "no-implicit-dependencies": false,
+    "interface-name": [false],
+    "semicolon": [true, "always", "ignore-bound-class-methods"],
+    "no-empty": [true, "allow-empty-functions"]
+  }
+}
+
+
